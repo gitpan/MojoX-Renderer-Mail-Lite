@@ -21,11 +21,11 @@ name: MojoX-Renderer-Mail-Lite
 provides:
   MojoX::Renderer::Mail::Lite:
     file: lib/MojoX/Renderer/Mail/Lite.pm
-    version: 0.1
+    version: 0.11
 requires:
   Carp: 0
   Encode: 0
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://github.com/sharifulin/MojoX-Renderer-Mail-Lite.git
-version: 0.1
+version: 0.11

@@ -11,7 +11,7 @@ use constant TEST    => $ENV{'TEST' } || 0;
 use constant DEBUG   => $ENV{'DEBUG'} || 0;
 use constant CHARSET => 'UTF-8';
 
-our $VERSION = '0.1';
+our $VERSION = '0.11';
 
 sub build {
 	my $self = shift;
@@ -23,8 +23,8 @@ sub build {
 		$ctx->app->log->debug('No address to send mail'), return unless $ctx->stash('to');
 		$ctx->app->log->debug('No message to send mail'), return unless $ctx->stash('msg');
 		
-		my $msg     = $ctx->stash('msg'    ); Encode::_utf8_off($msg    );
-		my $subject = $ctx->stash('subject'); Encode::_utf8_off($subject);
+		my $msg     = _enc( $ctx->stash('msg'    ) );
+		my $subject = _enc( $ctx->stash('subject') );
 		
 		my $mail    = join "\n",
 			'From: '         . ($ctx->stash('from') || $args->{'from'}),
@@ -51,10 +51,14 @@ sub build {
 	};
 }
 
+sub _enc($) {
+	Encode::_utf8_off($_[0]) if $_[0] && Encode::is_utf8($_[0]);
+	return $_[0];
+}
+
 1;
 
 __END__
-
 
 =encoding UTF-8
 
@@ -223,6 +227,17 @@ No send mail, default value is 0
 =head1 AUTHOR
 
 Anatoly Sharifulin <sharifulin@gmail.com>
+
+=head1 TODO
+
+=over 2
+
+=item * Compatible interface with MojoX::Renderer::Mail
+
+=item * Tests
+
+=back
+
 
 =head1 BUGS
 
