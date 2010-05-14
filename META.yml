@@ -1,0 +1,31 @@
+---
+abstract: 'Simple mail renderer for Mojo and Mojolicious without prerequires'
+author:
+  - 'Anatoly Sharifulin <sharifulin@gmail.com>'
+build_requires:
+  Test::More: 0
+configure_requires:
+  Module::Build: 0.36
+generated_by: 'Module::Build version 0.3607'
+keywords:
+  - mojo
+  - mojolicious
+  - lite
+  - mail
+  - renderer
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: MojoX-Renderer-Mail-Lite
+provides:
+  MojoX::Renderer::Mail::Lite:
+    file: lib/MojoX/Renderer/Mail/Lite.pm
+    version: 0.1
+requires:
+  Carp: 0
+  Encode: 0
+resources:
+  license: http://dev.perl.org/licenses/
+  repository: git://github.com/sharifulin/MojoX-Renderer-Mail-Lite.git
+version: 0.1

@@ -1,0 +1,49 @@
+#!/usr/bin/perl
+use lib qw(lib ../lib ../mojo/lib ../../mojo/lib);
+
+use Mojolicious::Lite;
+use MojoX::Renderer::Mail::Lite;
+
+app->renderer->add_handler(
+	mail => MojoX::Renderer::Mail::Lite->build(
+		from => 'sharifulin@gmail.com',
+	)
+);
+
+get '/simple' => sub {
+	my $self = shift;
+	
+	$self->render(
+		handler => 'mail',
+		
+		to      => 'sharifulin@gmail.com',
+		subject => 'Тест',
+		msg     => 'Привет!',
+	);
+	
+	$self->render_text('OK');
+};
+
+get '/render' => sub {
+	my $self = shift;
+	
+	$self->render(
+		handler => 'mail',
+		
+		to      => 'sharifulin@gmail.com',
+		subject => 'Тест render',
+		msg     => $self->render_partial('render', format => 'mail'),
+	);
+	
+	$self->render(format => 'html');
+} => 'render';
+
+app->start;
+
+__DATA__
+
+@@ render.html.ep
+<p>Привет render!</p>
+
+@@ render.mail.ep
+Привет render!

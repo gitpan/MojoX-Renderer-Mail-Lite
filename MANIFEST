@@ -1,0 +1,12 @@
+Build.PL
+Changes
+MANIFEST
+README
+lib/MojoX/Renderer/Mail/Lite.pm
+t/00-load.t
+t/manifest.t
+t/pod-coverage.t
+t/pod.t
+script/test
+Makefile.PL
+META.yml
