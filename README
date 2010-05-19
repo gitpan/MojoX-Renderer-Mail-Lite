@@ -1,8 +1,8 @@
-MojoX::Renderer::Mail::Lite - Simple mail renderer for Mojo and Mojolicious without prerequires.
+MojoX::Renderer::Mail::Lite - Simple mail renderer for Mojo and Mojolicious through sendmail without prerequires.
 
-Default charset of subject and any data is UTF-8.
+Charset of subject and any data is UTF-8.
 
-Default transfer encoding is base64.
+Transfer encoding is base64.
 
 
 SYNOPSIS

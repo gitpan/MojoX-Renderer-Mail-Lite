@@ -1,5 +1,5 @@
 ---
-abstract: 'Simple mail renderer for Mojo and Mojolicious without prerequires'
+abstract: 'Simple mail renderer for Mojo and Mojolicious through sendmail without prerequires'
 author:
   - 'Anatoly Sharifulin <sharifulin@gmail.com>'
 build_requires:
@@ -21,11 +21,12 @@ name: MojoX-Renderer-Mail-Lite
 provides:
   MojoX::Renderer::Mail::Lite:
     file: lib/MojoX/Renderer/Mail/Lite.pm
-    version: 0.11
+    version: 0.12
 requires:
   Carp: 0
   Encode: 0
+  Mojo::ByteStream: 0
 resources:
   license: http://dev.perl.org/licenses/
   repository: git://github.com/sharifulin/MojoX-Renderer-Mail-Lite.git
-version: 0.11
+version: 0.12

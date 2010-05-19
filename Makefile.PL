@@ -9,6 +9,7 @@ WriteMakefile
           'VERSION_FROM' => 'lib/MojoX/Renderer/Mail/Lite.pm',
           'PREREQ_PM' => {
                            'Test::More' => 0,
+                           'Mojo::ByteStream' => 0,
                            'Encode' => 0,
                            'Carp' => 0
                          }

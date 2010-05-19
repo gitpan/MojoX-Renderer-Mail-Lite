@@ -11,7 +11,7 @@ use constant TEST    => $ENV{'TEST' } || 0;
 use constant DEBUG   => $ENV{'DEBUG'} || 0;
 use constant CHARSET => 'UTF-8';
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 sub build {
 	my $self = shift;
@@ -62,16 +62,16 @@ __END__
 
 =encoding UTF-8
 
-NAME
+=head1 NAME
 
-MojoX::Renderer::Mail::Lite - Simple mail renderer for Mojo and Mojolicious without prerequires.
+MojoX::Renderer::Mail::Lite - Simple mail renderer for Mojo and Mojolicious through sendmail without prerequires.
 
-Default charset of subject and any data is UTF-8.
+Сharset of subject and any data is UTF-8.
 
-Default transfer encoding is base64.
+Transfer encoding is base64.
 
 
-SYNOPSIS
+=head1 SYNOPSIS
 
   #!/usr/bin/perl
   

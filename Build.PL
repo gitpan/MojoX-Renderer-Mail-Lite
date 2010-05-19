@@ -7,14 +7,14 @@ my $builder = Module::Build->new(
     license             => 'perl',
     dist_author         => 'Anatoly Sharifulin <sharifulin@gmail.com>',
     dist_version_from   => 'lib/MojoX/Renderer/Mail/Lite.pm',
-	dist_abstract       => 'Simple mail renderer for Mojo and Mojolicious without prerequires',
+	dist_abstract       => 'Simple mail renderer for Mojo and Mojolicious through sendmail without prerequires',
     build_requires => {
         'Test::More' => 0,
     },
     requires => {
 		'Carp' => 0,
 		'Encode' => 0,
-		# 'Mojo::ByteStream' => 0,
+		'Mojo::ByteStream' => 0,
     },
 	meta_merge => {
 		resources => {
